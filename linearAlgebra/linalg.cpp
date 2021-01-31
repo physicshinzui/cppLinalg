@@ -1,14 +1,13 @@
 #ifndef LINALG_H
 #define LINALG_H
-#include <vector>
 #include <iostream> 
-#include "linalg.h"
 #include <stdlib.h> 
+#include "linalg.h"
 
-std::vector<std::vector<double>> jacobMethod(std::vector<double> init_x, std::vector<std::vector<double>> A, std::vector<double> b) {
+vector<vector<double>> LinearAlgebra::jacobMethod(vector<double> init_x, vector<vector<double>> A, vector<double> b) {
     int k = 0;              // kth iteration
     int n = (int)A.size();  // the size of the matrix A
-     
+    
     // while (true) {
     //     int sigma = 0;
         
@@ -24,7 +23,7 @@ std::vector<std::vector<double>> jacobMethod(std::vector<double> init_x, std::ve
     return A;
 }
 
-std::vector<double> gaussJordanElimination(std::vector<std::vector<double>> Ab) {
+vector<double> LinearAlgebra::gaussJordanElimination(vector<vector<double>> Ab) {
     //Args:
     //  Ab: an augmented matrix (size n * n + 1)
     //Returns:
@@ -38,10 +37,10 @@ std::vector<double> gaussJordanElimination(std::vector<std::vector<double>> Ab) 
     for (int i = 0; i < n; ++i) {
         
         if (Ab.at(i).at(i) == 0.0) {
-            std::cout << "Divide by zero detected" << std::endl;
+            cout << "Divide by zero detected" << endl;
             exit (EXIT_FAILURE);
         }
- 
+
         for (int j = 0; j < n; ++j) {
             if (i != j) {
                 // This part corresponds to row operation to obtain diagonal matrix whose all element is one.
@@ -53,7 +52,7 @@ std::vector<double> gaussJordanElimination(std::vector<std::vector<double>> Ab) 
         }
     }
 
-    std::vector<double> X(n);
+    vector<double> X(n);
     for (int i = 0; i < n; ++i) {
         X.at(i) = Ab.at(i).at(n) / Ab.at(i).at(i);
     }
@@ -61,12 +60,12 @@ std::vector<double> gaussJordanElimination(std::vector<std::vector<double>> Ab) 
     return X;
 }
 
-void showMatrix(std::vector<std::vector<double>> A) {
+void LinearAlgebra::showMatrix(vector<vector<double>> A) {
     for (int i = 0; i < (int)A.size(); i++) {
         for (int j = 0; j < (int)A.at(1).size(); j++) {
-            std::cout << A.at(i).at(j) << ' ';
+            cout << A.at(i).at(j) << ' ';
         }
-        std::cout << std::endl;
+        cout << endl;
     }    
 }
 
