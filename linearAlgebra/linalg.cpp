@@ -29,6 +29,9 @@ std::vector<double> gaussJordanElimination(std::vector<std::vector<double>> Ab) 
     //  Ab: an augmented matrix (size n * n + 1)
     //Returns:
     //  X: a solution vector (size n).
+    
+    // Todo: the diagonal elements of Ab must be non-zero, 
+    // but there are cases where we want handle such matrices. 
 
     int n = (int)Ab.size(); //the number of rows
 
@@ -41,9 +44,10 @@ std::vector<double> gaussJordanElimination(std::vector<std::vector<double>> Ab) 
  
         for (int j = 0; j < n; ++j) {
             if (i != j) {
+                // This part corresponds to row operation to obtain diagonal matrix whose all element is one.
                 double ratio = Ab.at(j).at(i) / Ab.at(i).at(i);
-                for (int k = 0; k < n + 1; ++k) {
-                    Ab.at(j).at(k) = Ab.at(j).at(k) - ratio * Ab.at(i).at(k);   
+                for (int k = 0; k < n + 1; ++k) { 
+                    Ab.at(j).at(k) = Ab.at(j).at(k) - ratio * Ab.at(i).at(k); // Eliminates the element Ab.at(j).at(k) underneath the pivot Ab.at(j).at(i)
                 }
             }
         }
@@ -65,6 +69,5 @@ void showMatrix(std::vector<std::vector<double>> A) {
         std::cout << std::endl;
     }    
 }
-
 
 #endif 
