@@ -1,7 +1,8 @@
-#ifndef JACOB_H
-#define JACOB_H
+#ifndef LINALG_H
+#define LINALG_H
 #include <vector>
 #include <iostream> 
+#include "linalg.h"
 #include <stdlib.h> 
 
 std::vector<std::vector<double>> jacobMethod(std::vector<double> init_x, std::vector<std::vector<double>> A, std::vector<double> b) {
@@ -63,28 +64,6 @@ void showMatrix(std::vector<std::vector<double>> A) {
         }
         std::cout << std::endl;
     }    
-}
-
-int main() {
-    std::vector<std::vector<double>> A(2, std::vector<double>(2));
-    std::vector<std::vector<double>> Ab(3, std::vector<double>(3));
-    std::vector<double> init_x(2);
-    std::vector<double> b;
-    
-    A = {{2, 1}, {5, 7}};
-    b = {11, 13};
-    Ab = {{2, 1, 11}, {5, 7, 13}};
-    showMatrix(A);
-    showMatrix(Ab);
-
-    //std::vector<std::vector<double>> B = jacobMethod(init_x, A, b);
-    
-    std::vector<double> X = gaussJordanElimination(Ab);
-    for (auto elem : X) {
-        std::cout << elem << std::endl;
-    }
-    
-    return 0;
 }
 
 
