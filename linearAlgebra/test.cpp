@@ -1,6 +1,5 @@
 #include "test.h"
 
-int testGaussJordanElimination() {
-
+int TestAlgorithm::testGaussJordanElimination() {
     return 0;
 }

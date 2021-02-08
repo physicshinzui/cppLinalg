@@ -1,6 +1,13 @@
 #ifndef TEST_H
 #define TEST_H 
+#include "linalg.h"
 
-int testGaussJordanElimination();
+class TestAlgorithm {
+    private:
+
+    public:
+        int testGaussJordanElimination();
+
+};
 
 #endif
