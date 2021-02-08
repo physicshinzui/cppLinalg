@@ -1,5 +1,3 @@
-#ifndef LINALG_H
-#define LINALG_H
 #include <iostream> 
 #include <stdlib.h> 
 #include "linalg.h"
@@ -69,4 +67,22 @@ void LinearAlgebra::showMatrix(vector<vector<double>> A) {
     }    
 }
 
-#endif 
+vector<vector<double>> LUDecomposition(vector<vector<double>> A) {
+    // Args:
+    //   A: squared matrix
+    // Returns:
+    //   L, U: lower trinangular and upper triangular matrices.
+
+    // Create zero matrices for L and U. 
+
+    // Create pivot matrix P and the multplied matrix PA
+
+    // Perform LU decomposition
+
+    //
+
+    vector<vector<double>> L;
+    vector<vector<double>> U;
+
+    return L;
+}
