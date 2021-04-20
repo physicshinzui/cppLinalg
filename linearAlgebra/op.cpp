@@ -38,12 +38,7 @@ int main()
 {
     int A[2][2] { {1,2}, {3,4} };
     int B[2][2] { {1,2}, {3,4} };
-    // std::cout << "*** Matrix A *** " << std::endl;
     printMatrix(A,2,2);
-
-    // std::cout << "*** Matrix B *** " << std::endl;
-    // std::cout << B[0][0] << ' ' << B[0][1] << std::endl;
-    // std::cout << B[1][0] << ' ' << B[1][1] << std::endl;
 //    matmul(A, B);
 //    std::pair<int, int> size;
 //    std::cout << size_2d(A).second << std::endl;
