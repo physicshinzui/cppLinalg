@@ -1,6 +1,6 @@
 #ifndef TEST_H
 #define TEST_H 
-#include "linalg.h"
+//#include "linalg.h"
 
 class TestAlgorithm {
     private:
